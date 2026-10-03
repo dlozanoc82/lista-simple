@@ -81,4 +81,8 @@ public class ListaSimple {
         }
         return false;
     }
+
+    public Nodo getNodoInicial() {
+        return nodoInicial;
+    }
 }

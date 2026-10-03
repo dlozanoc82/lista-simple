@@ -4,6 +4,8 @@ public class Main {
     public static void main(String[] args) {
 
         ListaSimple lista = new ListaSimple();
+        Archivo.cargarLista(lista);
+
         int opcion;
 
         do{
@@ -26,14 +28,14 @@ public class Main {
                    Operaciones.eliminarElemento(lista);
                    break;
                case 6:
+                   Operaciones.guardarDatos(lista);
+                   break;
+               case 7:
                    Operaciones.salir();
                    break;
                default:
                    Operaciones.mostrarMensaje("Opcion no Valida");
            }
-
-
-        }while (opcion != 6);
-
+        }while (opcion != 7);
     }
 }

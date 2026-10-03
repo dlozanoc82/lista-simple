@@ -12,7 +12,8 @@ public class Operaciones {
                 "3. Mostrar Lista\n" +
                 "4. Buscar Elemento\n" +
                 "5. Eliminar Elemento\n" +
-                "6. Salir";
+                "6. Guardar datos en TXT\n" +
+                "7. Salir";
         return Integer.parseInt(JOptionPane.showInputDialog(menu));
     }
 
@@ -35,6 +36,7 @@ public class Operaciones {
     public static void insertarAlInicio(ListaSimple lista){
         int valor = pedirValor("Valor a insertar al Inicio");
         lista.insertarAlInicio(valor);
+        Archivo.guardarLista(lista);
         mostrarMensaje("Valor insertado correctamente!!!");
     }
 
@@ -42,6 +44,7 @@ public class Operaciones {
     public static void insertarAlFinal(ListaSimple lista){
         int valor = pedirValor("Valor a insertar al Final: ");
         lista.insertarAlFinal(valor);
+        Archivo.guardarLista(lista);
         mostrarMensaje("Valor insertado al final !");
     }
 
@@ -68,6 +71,7 @@ public class Operaciones {
         boolean eliminado = lista.eliminarValor(valor);
 
         if (eliminado){
+            Archivo.guardarLista(lista);
             mostrarMensaje("Valor eliminado correctamente");
         }else{
             mostrarMensaje("Valor NO encontrado");
@@ -75,10 +79,9 @@ public class Operaciones {
     }
 
 
-
-
-
-
-
+    public static void guardarDatos(ListaSimple lista){
+        Archivo.guardarLista(lista);
+        mostrarMensaje("Datos guardados correctamente!");
+    }
 
 }
